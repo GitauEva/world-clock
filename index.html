@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock</title>
   </head>
   <body>
@@ -20,9 +22,11 @@
       <div class="city">
         <div>
           <h2>Nairobi</h2>
-          <div class="date">20/Sept/2024</div>
+          <div class="date" id="date">20/Sept/2024</div>
         </div>
-        <div class="time">1:57:22 <small> P.M.</small></div>
+        <div class="time" id="time">
+          1:57:22 <small id="season">P.M.</small>
+        </div>
       </div>
       <div class="city">
         <div>
