@@ -1,10 +1,25 @@
 //update the time on the page
-let nairobiDate = moment().tz("Africa/Nairobi").format("MMMM Do YYYY");
-let nairobiTime = moment().tz("Africa/Nairobi").format("HH:mm:ss");
-let nairobiSeason = moment().tz("Africa/Nairobi").format("A");
-let dateElement = document.querySelector("#date");
-let timeElement = document.querySelector("#time");
-let seasonElement = document.querySelector("#season");
-dateElement.innerHTML = nairobiDate;
-timeElement.innerHTML = nairobiTime;
-seasonElement.innerHTML = nairobiSeason;
+function updateTime() {
+  //Nairobi
+  let nairobiElement = document.querySelector("#nairobi");
+  let nairobiDateElement = nairobiElement.querySelector(".date");
+  let nairobiTimeElement = nairobiElement.querySelector(".time");
+  let nairobiTime = moment().tz("Africa/Nairobi");
+
+  nairobiDateElement.innerHTML = nairobiTime.format("MMMM Do YYYY");
+  nairobiTimeElement.innerHTML = nairobiTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
+
+  //paris
+  let parisElement = document.querySelector("#paris");
+  let parisDateElement = parisElement.querySelector(".date");
+  let parisTimeElement = parisElement.querySelector(".time");
+  let parisTime = moment().tz("Europe/Paris");
+
+  parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
+  parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+}
+
+updateTime();
+setInterval(updateTime, 1000);
